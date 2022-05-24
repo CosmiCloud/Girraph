@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "image": {
+    "@type": "URL"
+    },
+  "name": {
+    "@type": "Text"
+  },
+  "description": {
+    "@type": "Text"
+  },
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "ParentNFT": ""
+  },
+  "usageInfo": {
+    "@type": "CreativeWork",
+    "tokenID": "",
+    "powerlevel": "",
+    "rarity": "",
+    "backstory": "",
+    "weight": "",
+    "height": ""
+  },
+  "identifier": ""
+}

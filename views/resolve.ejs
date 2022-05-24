@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Girraph</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/aos/aos.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.scss" type="text/css" />
+    <link rel="stylesheet" href="js/main.js" type="text/css" />
+
+    <!-- =======================================================
+  * Template Name: OnePage - v4.7.0
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+        <!--<h1 class="logo"><a href="img/Logo.jpg">Public DKG Beta</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li id="MM">
+              
+            </li>
+          </ul>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <html>
+  <head>
+ 
+  </head>
+  <body>
+  </body>
+    </html>
+    <!-- End Header -->
+    <main id="main">
+      <% if(locals.data) { %>
+        <% if(locals.data.data == '') { %>
+          <section id="contact" class="contact" style="padding:30px 0px;padding-top:130px;">
+            <div class="container" >
+  
+              <div class="section-title">
+                <h2 style="color:#6168ED">Woops!</h2>
+                <p>The resolve result contained no data!</p>
+                <div class="php-email-form" style="background-color:none;"><button type="submit" style="background-color:#6168ED;"><a href="/resolve" style="color:white;background-color:none;">Try Again</a></button></div>
+              </div>
+  
+            </div>
+          </section>
+        <% } %>
+  
+        <% if(locals.data.status == 'FAILED') { %>
+          <section id="faq" class="faq section-bg" style="padding-top:130px;">
+            <div class="container" >
+  
+              <div class="section-title">
+                <h2 style="color:#6168ED">Resolve <%= data.status %></h2>
+                <p>on <%= data.data.blockchain.name %></p>
+              </div>
+              <div class="php-email-form"><button type="submit" style="background-color:#6168ED;"><a href="/resolve" style="color:white;">Try Again</a></button></div>
+            </div>
+          </section>
+        <% } %>
+  
+        <% if(locals.data.status == 'COMPLETED') { %>
+          <% if(locals.data.data.length != 0) { %>
+            <section id="faq" class="faq section-bg">
+              <div class="container" >
+                <section id="contact" class="contact" style="padding:30px 0px;">
+                  <div class="container" >
+  
+                    <div class="section-title">
+                      <h2 style="color:#6168ED">(<%= data.data.length %>) Resolve Results</h2>
+                      <div class="php-email-form" style="background-color:none;"><button type="submit" style="background-color:#6168ED;"><a href="/" style="color:white;background-color:none;">Home</a></button></div>
+                    </div>
+  
+                  </div>
+                </section>
+  
+                <div class="faq-list">
+                  <ul>
+                    <% for(i=0; i < locals.data.data.length; i++) { %>
+                      <li data-aos="fade-up" data-aos-delay="100" style="padding-left:5px;border: 1px solid #6168ED;">
+                      <% cdata_element = Object.entries(locals.data.data)[i] %>
+                      <% cdata_element = cdata_element[1] %>
+                      <a id="faq-list-1" data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1" style="word-wrap: break-word;color:#6168ED;">
+                        <script>
+                          //aindex = <%= i+1 %>
+                          bindex = <%= i+1 %>
+                          document.getElementById("faq-list-1").setAttribute("data-bs-target", "#faq-list-"+bindex);
+                          //document.getElementById("faq-list-1").setAttribute("id", "faq-list-"+aindex);
+                        </script>
+                        <!--ITEM DATA HERE -->
+                        <%= cdata_element.type %>:  | ID: <%= cdata_element.id %><i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i>
+                      </a>
+  
+                      <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                        <script>
+                          index = <%= i+1 %>
+                          document.getElementById("faq-list-1").setAttribute("id", "faq-list-"+index);
+                        </script>
+                        <!--ON CLICK TEXT HERE -->
+                        <% if(cdata_element.assertion){ %>
+                          <ul>
+                            <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                              Metadata:
+                              <ul style="border-left: 5px solid #C446A7;list-style-type: none;padding: 10px 20px;background-color: #f1f1f1;">
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Timestamp: <%= cdata_element.assertion.metadata.timestamp %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Type: <%= cdata_element.assertion.metadata.type %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Visibility: <%= cdata_element.assertion.metadata.visibility %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Data hash: <%= cdata_element.assertion.metadata.dataHash %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Issuer: <%= cdata_element.assertion.metadata.issuer %></li>
+                              </ul>
+                            </li>
+                            <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                              Blockchain:
+                              <ul style="border-left: 5px solid #CE572A;list-style-type: none;padding: 10px 20px;background-color: #f1f1f1;">
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background-color: #f1f1f1;">Blockchain: <%= cdata_element.assertion.blockchain.name %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background-color: #f1f1f1;">Transaction hash: <%= cdata_element.assertion.blockchain.transactionHash %></li>
+                              </ul>
+                            </li>
+                            <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;">
+                              Keywords:
+                              <ul style="border-left: 5px solid #4655C4;list-style-type: none;padding: 10px 20px;background-color: #f1f1f1;">
+                                <% for(x=0; x < cdata_element.assertion.metadata.keywords.length; x++) { %>
+                                  <% a = Object.entries(cdata_element.assertion.metadata.keywords)[x] %>
+  
+                                  <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;"><%= a[1] %></li>
+                                <% } %>
+                              </ul>
+                            </li>
+                            <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                              Data:
+                              <ul style="border-left: 5px solid #2B8F12;list-style-type: none;padding: 10px 20px;background-color: #f1f1f1;">
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background-color: #f1f1f1;">Signature: <%= cdata_element.assertion.signature %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background-color: #f1f1f1;">ID: <%= cdata_element.assertion.id %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background-color: #f1f1f1;">Data: <%- JSON.stringify(cdata_element.assertion.data) %></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        <% } %>
+  
+                        <% if(cdata_element.result){ %>
+                          <ul>
+                            <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                              Metadata:
+                              <ul style="border-left: 5px solid #C446A7;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Latest State: <%= cdata_element.result.metadata.latestState %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Issuer: <%= cdata_element.result.metadata.issuer %></li>
+                                <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;background:none;">Type: <%= cdata_element.result.metadata.type %></li>
+                              </ul>
+                            </li>
+                            <li style="padding-top:0px;padding-bottom:0px;word-wrap: break-word;">
+                              Graph data:
+                              <ul style="border-left: 5px solid #2B8F12;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                                <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;"><%- JSON.stringify(cdata_element.result.data['@graph']) %></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        <% } %>
+  
+                    <% } %>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          <% } %>
+        <% }else{ %> <!--something wet wrong -->
+          <section id="faq" class="faq section-bg" style="padding-top:130px;">
+            <div class="container" >
+  
+              <div class="section-title">
+                <h2 style="color:#6168ED">Oops! Something went wrong.</h2>
+              </div>
+              <div class="php-email-form"><button type="submit" style="background-color:#6168ED;"><a href="/home" style="color:white;">Home</a></button></div>
+            </div>
+          </section>
+        <% } %>
+      <% }else{ %>
+        <nav class="main-menu">
+          <ul>
+            <li>
+                <a href="/search">
+                    <i class="fa fa-home fa-2x"></i>
+                    <p class="nav-text" style="padding-bottom:50px;padding-top:10px;">
+                        GIRRAPH
+                    </p>
+                </a>
+              
+            </li>
+              <li>
+                  <a href="/dashboard">
+                      <i class="fa fa-home fa-2x"></i>
+                      <span class="nav-text" style="padding-bottom:10px;padding-top:10px;">
+                          Dashboard
+                      </span>
+                  </a>
+                
+              </li>
+              <li class="has-subnav">
+                  <a href="/provision">
+                      <i class="fa fa-laptop fa-2x"></i>
+                      <span class="nav-text" style="padding-bottom:10px;">
+                          Provision
+                      </span>
+                  </a>
+                  
+              </li>
+              <li class="has-subnav">
+                  <a href="/update">
+                     <i class="fa fa-list fa-2x"></i>
+                      <span class="nav-text" style="padding-bottom:10px;">
+                          Update
+                      </span>
+                  </a>
+                  
+              </li>
+              <li class="has-subnav">
+                  <a href="/resolve">
+                     <i class="fa fa-folder-open fa-2x"></i>
+                      <span class="nav-text" style="padding-bottom:10px;">
+                          Resolve
+                      </span>
+                  </a>
+                 
+              </li>
+             
+              <li class="has-subnav">
+                  <a onclick="logout()">
+                    <i class="fa fa-folder-open fa-2x"></i>
+                    <span class="nav-text" style="padding-bottom:10px;">
+                        Logout
+                    </span>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+        <section id="contact" class="contact" style="padding-top:130px;">
+          <div class="container" data-aos="fade-up">
+  
+            <div class="section-title">
+              <h2 style="color:#6168ED">Resolve</h2>
+              <p>Resolve a specific id.</p>
+            </div>
+            <br>
+            <div class="section-title">
+              <form action="/resolve" method="POST">
+                <input type="text" name="resolve_ids" class="form-control" id="resolve_trigger" rows="5" placeholder="Resolve id..." style="margin-left:25%;width:50%;" required pattern=".{64,}"></input>
+                <input type="text" name="account" id="account" style="display:none;" value=""></input>
+                <br>
+                <div class="php-email-form"><button type="submit" id="resolve_button" onclick="pleasewait()" style="background-color:#6168ED;">Resolve</button></div>
+                
+                <div id="please_wait" type="text" style="display: none;">Please wait... Resolving to the DKG.</div>
+                <% if(locals.blocked) { %>
+                  <div type="text">You can only submit 1 resolve request per 30 seconds. Please do not spam.</div>
+                <% } %>
+              </form>
+            </div>
+          </div>
+        </section><!-- End Contact Section -->
+      <% } %>
+      <form id="login_form" action="/dashboard" method="POST">
+        <input type="text" name="account" id="account" style="display:none;" value=""></input>
+      </form>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" style="position: fixed; bottom: 0; width: 100%">
+      <div class="container d-md-flex py-4">
+        
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter.js"></script>
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      let account = localStorage.getItem('account');
+      if(account){
+        account = account.substring(0,10);
+        element = `<p style="font-size:18px;color:#13B785;"><i class="ri-check-double-line" style="color:#13B785;padding-right:3px;"></i>${account}...</p>`
+        $('#MM').append(element);
+      }else{
+        element = `<button class="connectWalletButton" id="connectWalletButton" onclick="get_account()">Connect Wallet</button>`
+        $('#MM').append(element);
+      }
+              
+    </script>
+    <script src="js/main.js"></script>
+    <script>
+      function pleasewait() {
+        var x = document.getElementById("please_wait");
+        var y = document.getElementById("resolve_button");
+
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          if (document.getElementById("resolve_trigger").value.length != 0) {
+            y.style.display = "none";
+          }
+        } else {
+          x.style.display = "none";
+        }
+
+        if (document.getElementById("resolve_trigger").value.length != 0) {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      
+      function get_account(){
+        getAccount();
+      }
+
+      function logout(){
+        localStorage.removeItem('account');
+        document.getElementById("MM").innerHTML = "";
+        document.getElementById("hero").innerHTML = "";
+        element = `<button class="connectWalletButton" id="connectWalletButton" onclick="get_account()">Connect Wallet</button>`
+        $('#MM').append(element);
+      }
+      
+      if(localStorage.account){
+        document.getElementById("account").value = localStorage.account;
+      }
+
+    </script>
+  </body>
+</html>
+

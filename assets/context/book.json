@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "isbn": {
+    "@type": "Text"
+    },
+  "about": "",
+  "author": {
+    "@type": "Person",
+    "name": ""
+  },
+  "illustrator": {
+    "@type": "Person",
+    "name": ""
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": ""
+  },
+  "name": "",
+  "identifier": ""
+}

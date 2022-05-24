@@ -1,0 +1,15 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "material": {
+    "@type": "Product"
+    },
+  "brand": {
+    "@type": "Brand"
+  },
+  "gtin": "",
+  "name": "",
+  "sku": "",
+  "productID": "",
+  "identifier": ""
+}

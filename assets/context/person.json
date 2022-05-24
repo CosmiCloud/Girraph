@@ -1,0 +1,25 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "parent": {
+    "@type": "Person",
+    "name": ""
+    },
+  "sibling": {
+    "@type": "Person",
+    "name": ""
+    },
+  "children": {
+    "@type": "Person",
+    "name": ""
+    },
+  "nationality": {
+    "@type": "Country"
+  },
+  "birthDate": {
+    "@type": "Date"
+  },
+  "givenName": "",
+  "gender": "",
+  "identifier": ""
+}

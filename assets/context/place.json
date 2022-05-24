@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "address": {
+    "@type": "PostalAddress"
+    },
+  "geo": {
+    "@type": "GeoCoordinates"
+    },
+  "latitude": {
+    "@type": "Number"
+    },
+  "longitude": {
+    "@type": "Number"
+  },
+  "name": "",
+  "telephone": "",
+  "identifier": ""
+}

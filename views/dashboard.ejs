@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Girraph</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/aos/aos.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.scss" type="text/css" />
+    <link rel="stylesheet" href="js/main.js" type="text/css" />
+
+    <!-- =======================================================
+  * Template Name: OnePage - v4.7.0
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    let searches = '<%- JSON.stringify(locals.searches) %>'
+    if(searches){
+      localStorage.setItem("searches", searches);
+    }
+
+    let provisions = '<%- JSON.stringify(locals.provisions) %>'
+    if(provisions){
+      localStorage.setItem("provisions", provisions);
+    }
+
+    let updates = '<%- JSON.stringify(locals.updates) %>'
+    if(updates){
+      localStorage.setItem("updates", updates);
+    }
+
+    let resolves = '<%- JSON.stringify(locals.resolves) %>'
+    if(resolves){
+      localStorage.setItem("resolves", resolves);
+    }
+
+    let action = '<%- JSON.stringify(locals.action) %>'
+    if(action){
+      localStorage.setItem("action", action);
+    }
+
+    let biochementity = '<%- JSON.stringify(locals.biochementity) %>'
+    if(biochementity){
+      localStorage.setItem("biochementity", biochementity);
+    }
+
+    let creativework = '<%- JSON.stringify(locals.creativework) %>'
+    if(creativework){
+      localStorage.setItem("creativework", creativework);
+    }
+
+    let event = '<%- JSON.stringify(locals.event) %>'
+    if(event){
+      localStorage.setItem("event", event);
+    }
+
+    let intangible = '<%- JSON.stringify(locals.intangible) %>'
+    if(intangible){
+      localStorage.setItem("intangible", intangible);
+    }
+
+    let medicalentity = '<%- JSON.stringify(locals.medicalentity) %>'
+    if(medicalentity){
+      localStorage.setItem("medicalentity", medicalentity);
+    }
+
+    let organization = '<%- JSON.stringify(locals.organization) %>'
+    if(organization){
+      localStorage.setItem("organization", organization);
+    }
+
+    let person = '<%- JSON.stringify(locals.person) %>'
+    if(person){
+      localStorage.setItem("person", person);
+    }
+
+    let place = '<%- JSON.stringify(locals.place) %>'
+    if(place){
+      localStorage.setItem("place", place);
+    }
+
+    let product = '<%- JSON.stringify(locals.product) %>'
+    if(product){
+      localStorage.setItem("product", product);
+    }
+
+    let txn_header = '<%- JSON.stringify(locals.txn_header) %>'
+    if(txn_header){
+      localStorage.setItem("txn_header", txn_header);
+    }
+
+    let txn_header_asc = '<%- JSON.stringify(locals.txn_header_asc) %>'
+    if(txn_header_asc){
+      localStorage.setItem("txn_header_asc", txn_header_asc);
+    }
+
+    let mumbai_costs = '<%- JSON.stringify(locals.mumbai_costs) %>'
+    if(mumbai_costs){
+      localStorage.setItem("mumbai_costs", mumbai_costs);
+    }
+    
+  </script>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="d-flex align-items-center justify-content-between" >
+        <div class="form-group" style="margin-left: 80px;">
+          <div class="input-group" style="white-space:nowrap;" id="searchbar">
+            
+          </div>
+        </div>
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+        <!--<h1 class="logo"><a href="img/Logo.jpg">Public DKG Beta</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li id="refresh">
+
+            </li>
+            <li id="MM">
+              
+            </li>
+          </ul>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <html>
+  <head>
+ 
+  </head>
+  <body><div class="area"></div><nav class="main-menu">
+            <ul>
+              <li>
+                  <a href="/search">
+                      <i class="fa fa-home fa-2x"></i>
+                      <p class="nav-text" style="padding-bottom:50px;padding-top:10px;">
+                          GIRRAPH
+                      </p>
+                  </a>
+                
+              </li>
+                <li>
+                    <a href="/dashboard">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text" style="padding-bottom:10px;padding-top:10px;">
+                            Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+                <li class="has-subnav">
+                    <a href="/provision">
+                        <i class="fa fa-laptop fa-2x"></i>
+                        <span class="nav-text" style="padding-bottom:10px;">
+                            Provision
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="/update">
+                       <i class="fa fa-list fa-2x"></i>
+                        <span class="nav-text" style="padding-bottom:10px;">
+                            Update
+                        </span>
+                    </a>
+                    
+                </li>
+                <li class="has-subnav">
+                    <a href="/resolve">
+                       <i class="fa fa-folder-open fa-2x"></i>
+                        <span class="nav-text" style="padding-bottom:10px;">
+                            Resolve
+                        </span>
+                    </a>
+                   
+                </li>
+               
+                <li class="has-subnav">
+                    <a onclick="logout()">
+                      <i class="fa fa-folder-open fa-2x"></i>
+                      <span class="nav-text" style="padding-bottom:10px;">
+                          Logout
+                      </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+  </body>
+    </html>
+    <!-- End Header -->
+    <main id="main" style="height: calc(100vh - 85px)">
+      
+      <section id="hero">
+        <div id="dashboard">
+          <div id="row1" class="d-flex"></div>
+          <div id="row2" class="d-flex"></div>
+
+
+        </div>
+
+      </section>
+      <form id="login_form" action="/dashboard" method="POST">
+        <input type="text" name="account" id="account" style="display:none;" value=""></input>
+      </form>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" style="position: fixed; bottom: 0; width: 100%">
+      <div class="container d-md-flex py-4">
+        
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter.js"></script>
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      let account = localStorage.getItem('account');
+      if(account){
+        account = account.substring(0,10);
+        element = `<p style="font-size:18px;color:#13B785;margin-right:80px;font-size:18px;"><i class="ri-check-double-line" style="color:#13B785;padding-right:3px;"></i>${account}...</p>`
+        refresh=`
+        <form id="login_form" action="/dashboard" method="POST" style="padding-right:40px;">
+        <input type="text" name="account" id="account" style="display:none;" value=""></input>
+        <button class="refreshButton" id="refreshButton" onclick="get_account()">Refresh</button>
+        <p style="display:none;color:#6168ed;" id="refreshloading">Updating...</p>
+        </form>
+        `
+        $('#refresh').append(refresh);
+        $('#MM').append(element);
+        
+      }else{
+        element = `<form><button class="connectWalletButton" id="connectWalletButton" onclick="get_account()" style="margin-right:40px;">Connect Wallet</button>
+        <p style="display:none;color:#6168ed;" id="connectloading" style="margin-right:80px;font-size:36px;">Loading dashboard...</p></form>`
+        $('#MM').append(element);
+      }
+              
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/chart.js"></script>
+    <script>
+      function pleasewait() {
+        var x = document.getElementById("please_wait");
+        var y = document.getElementById("search_button");
+
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          if (document.getElementById("keywords").value.length != 0) {
+            y.style.display = "none";
+          }
+        } else {
+          x.style.display = "none";
+        }
+
+        if (document.getElementById("keywords").value.length != 0) {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      function resolvewait() {
+        var y = document.getElementById("resolve_button");
+        y.style.display = "none";
+      }
+
+      function updatewait() {
+        var z = document.getElementById("update_button");
+        z.style.display = "none";
+      }
+      
+      function get_account(){
+        getAccount();
+        $('#connectWalletButton').hide();
+        document.getElementById("connectloading").style.display = "block";
+        $('.table_button').hide();
+      }
+
+      function logout(){
+        localStorage.removeItem('account');
+        document.getElementById("MM").innerHTML = "";
+        document.getElementById("hero").innerHTML = "";
+        $('#refreshButton').remove();
+        element = `<form><button class="connectWalletButton" id="connectWalletButton" onclick="get_account()" style="margin-right:40px;">Connect Wallet</button>
+        <p style="display:none;color:#6168ed;" id="connectloading" style="margin-right:80px;font-size:36px;">Loading dashboard...</p></form>`
+        $('#MM').append(element);
+
+        row1 = `
+            <div class="col-lg-5 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem; display:block;margin-left:auto;margin-right:auto;">
+              <div class="icon-box" style="height:100%;">
+                <h4 class="title" style="text-align:center;color:#6168ed;margin-left:auto;margin-right:auto;">Please connect your wallet to view your dashboard.</h4>
+              </div>
+            </div>`
+
+            $('#row1').append(row1);
+      }
+    </script>
+    <script> 
+          if(localStorage.searches){
+            total_searches = JSON.parse(localStorage.getItem('searches')).length;
+          }else{
+            total_searches = 0
+          }
+
+          if(localStorage.provisions){
+            total_provisions = JSON.parse(localStorage.getItem('provisions')).length;
+          }else{
+            total_provisions = 0
+          }
+
+          if(localStorage.updates){
+            total_updates = JSON.parse(localStorage.getItem('updates')).length;
+          }else{
+            total_updates = 0
+          }
+
+          if(localStorage.resolves){
+            total_resolves = JSON.parse(localStorage.getItem('resolves')).length;
+          }else{
+            total_resolves = 0
+          }
+
+          mumbai_costs = localStorage.getItem('mumbai_costs');
+          console.log(mumbai_costs)
+
+          row1 = `
+          <div class="col-lg-3 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:16rem; display:block;margin-right:10px;margin-left: 80px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Token Metrics</h4>
+              <div class="col-lg-6 col-md-6 mt-12 mb-lg-12" style="height:6rem;;margin-right:auto;margin-left:auto;margin-bottom:.5rem;box-shadow:#FFFFFF;">
+                <div style="height:100%;">
+                  <p class="title" style="text-align:center;color:#6168ed;margin-bottom:-1px;">Testnet Fees</p>
+                  <p style="text-align:center;color:#13B785;font-size: 24px;">${mumbai_costs.substring(0,6)} mumbai</p>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 mt-12 mb-lg-12" style="height:6rem;margin-right:auto;margin-left:auto;>
+                <div style="height:100%;">
+                  <p class="title" style="text-align:center;color:#6168ed;margin-bottom:-1px;">Mainnet Fees</p>
+                  <p style="text-align:center;color:#13B785;font-size: 24px;">0 OTP</p>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+          <div class="col-lg-4 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:16rem; display:block;margin-right:10px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Type of Provisions</h4>
+              <canvas id="types_chart" height=100px></canvas>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem; display:block;margin-right:10px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Searches</h4>
+              <h4 style="text-align:center;color:#13B785;font-size: 48px;">${total_searches}</h4>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem;display:block;margin-right:10px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Provisions</h4>
+              <h4 style="text-align:center;color:#13B785;font-size: 48px;">${total_provisions}</h4>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem;display:block;margin-right:10px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Updates</h4>
+              <h4 style="text-align:center;color:#13B785;font-size: 48px;">${total_updates}</h4>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem;display:block;margin-right:10px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Resolves</h4>
+              <h4 style="text-align:center;color:#13B785;font-size: 48px;">${total_resolves}</h4>
+            </div>
+          </div>
+          `
+          
+          row2 =`
+          <div class="col-lg-7 col-md-6 mt-12 mb-5 mb-lg-12" style="width:70.5rem;border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:34rem;display:block;margin-left:auto;margin-right:12px;margin-top:-2.3rem;margin-left: 80px;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">History</h4>
+              <div class="scrollbar" id="style-default" style="width:97%;height:95%;">
+                <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                          <div class="card-body" style="border:none;">
+                            <div class="table-responsive">
+                              <table class="table table-hover">
+                                <thead style="color:#6168ed;">
+                                  <tr style="color:#6168ed">
+                                    <th>Timestamp</th>
+                                    <th>Action</th>
+                                    <th>Keywords</th>
+                                    <th>Type</th>
+                                    <th>Blockchain</th>
+                                    <th>Txn Hash</th>
+                                    <th>Data ID</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody id="history_table">
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-12 mb-5 mb-lg-12" style="width:42rem;border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:42rem;display:block;margin-right:40px;margin-top:-10.3rem;">
+            <div class="icon-box" style="height:100%;">
+              <h4 class="title" style="text-align:center;color:#6168ed;">Activity Trends</h4>
+              <canvas id="activity_trends" height=270px></canvas>
+            </div>
+          </div>
+          `
+
+         //<div class="col-lg-12 col-md-6 mt-12 d-flex align-items-stretch mb-5 mb-lg-12">
+          if(localStorage.account){
+            $('#row1').append(row1);
+            $('#row2').append(row2);
+          }else{
+            row1 = `
+            <div class="col-lg-5 col-md-6 mt-12 mb-5 mb-lg-12" style="border: 1px solid #6168ed;border-radius:10px 10px 10px 10px;height:8rem; display:block;margin-left:auto;margin-right:auto;">
+              <div class="icon-box" style="height:100%;">
+                <h4 class="title" style="text-align:center;color:#6168ed;">Please connect your wallet to view your dashboard.</h4>
+              </div>
+            </div>`
+
+            $('#row1').append(row1);
+          }
+
+         
+          txn_rows = JSON.parse(localStorage.getItem('txn_header')).length
+          for(i= 0; i < txn_rows;i++){
+            row = JSON.parse(localStorage.getItem('txn_header'))[i]
+
+            timestamp = new Date(row.timestamp).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric"});
+
+            if(row.blockchain = 'polygon::testnet'){
+              blockchain = 'Mumbai'
+            }
+
+            if(row.txn_hash == null){
+              txn_hash = 'null'
+            }else{
+              txn_hash = JSON.stringify(row.txn_hash).substring(1,20);
+              txn_hash = `<a href="https://mumbai.polygonscan.com/tx/${row.txn_hash}" target="_blank" style="color:#13B785;">${txn_hash}</a>`
+            }
+
+            if(row.data_id == null){
+              data_id = 'null'
+            }else{
+              data_id = JSON.stringify(row.data_id).substring(1,20);
+            }
+
+            more_col =``
+
+            if(row.data_id && row.action == 'resolve'){
+              more_col =`
+              <section id="contact" class="contact" style="padding:0px 0px;">
+                        <div class="zcontainer" >
+                          <div class="section-title">
+                            <form  class="resolve" id="resolve_form" action="/resolve" method="POST">
+                              <input type="text" name="resolve_ids" id="idz" style="display:none;" value="${row.data_id}"></input>
+                              <input type="text" name="account" id="account" style="display:none;" value="${row.account}"></input>
+                              <div class="php-email-form"><button type="submit" style="float: right;padding:3px 10px;background-color:#6168ED;font-size:12px;" onclick="tablewait()" class ="table_button" id="table_button">Resolve</button></div>
+                            </form>
+                          </div>
+                        </div>
+                      </section>
+              `
+            }
+
+            if(row.ual && (row.action == 'provision' || row.action == 'update')){
+              more_col =`
+              <section id="contact" class="contact" style="padding:0px 0px;">
+                        <div class="zcontainer" >
+                          <div class="section-title">
+                            <form  class="resolve" id="resolve_form" action="/update_ual" method="POST">
+                              <input type="text" name="ual" id="ual" style="display:none;" value="${row.ual}"></input>
+                              <input type="text" name="type" id="type" style="display:none;" value="${row.type}"></input>
+                              <div class="php-email-form"><button type="submit" style="float: right;padding:3px 10px;background-color:#6168ED;font-size:12px;margin-bottom:3px;" onclick="tablewait()" class="table_button" id="table_button">Update</button></div>
+                            </form>
+                            <form  class="resolve" id="resolve_form" action="/resolve" method="POST">
+                              <input type="text" name="resolve_ids" id="idz" style="display:none;" value="${row.data_id}"></input>
+                              <input type="text" name="account" id="account" style="display:none;" value="${row.account}"></input>
+                              <div class="php-email-form"><button type="submit" style="float: right;padding:3px 10px;background-color:#6168ED;font-size:12px;" onclick="tablewait()" class="table_button" id="table_button">Resolve</button></div>
+                            </form>
+                          </div>
+                        </div>
+                      </section>
+              `
+            }
+
+            row_element=`
+            <tr>
+              <td style="overflow:hidden;">${timestamp}</td>
+              <td style="overflow:hidden;">${row.action}</td>
+              <td style="overflow:hidden;">${row.keywords}</td>
+              <td style="overflow:hidden;">${row.type}</td>
+              <td style="overflow:hidden;">${blockchain}</td>
+              <td style="overflow:hidden;">${txn_hash}...</td>
+              <td style="overflow:hidden;">${data_id}...</td>
+              <td style="overflow:hidden;">${more_col}</td>
+            </tr>
+            `
+            $('#history_table').append(row_element);
+          }
+
+      // function get_account(){
+      //   getAccount();
+      // }
+      
+      function tablewait() {
+        $('.table_button').hide();
+      }
+    </script>
+    <script>
+      
+      first_row = JSON.parse(localStorage.getItem('txn_header'))[0]
+      last_row = JSON.parse(localStorage.getItem('txn_header'))[txn_rows -1]
+
+      console.log('first row:'+new Date(first_row.timestamp))
+      console.log('last row:'+new Date(last_row.timestamp))
+
+      tot_searches = []
+
+      tot_provisions = []
+
+      tot_updates = []
+
+      tot_resolves = []
+
+      search_count = 0
+      provision_count = 0
+      update_count = 0
+      resolve_count = 0
+
+      recent_timestamp = new Date(last_row.timestamp).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"});
+      console.log('1st recent: '+recent_timestamp)
+
+      for(i= 0; i < txn_rows;i++){
+        row = JSON.parse(localStorage.getItem('txn_header_asc'))[i]
+        timestamp = new Date(row.timestamp).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"});
+        console.log('current'+timestamp)
+
+        search_obj = {}
+        provision_obj = {}
+        update_obj = {}
+        resolve_obj = {}
+
+        if(timestamp == recent_timestamp){
+          if(row.action == 'search'){
+            search_count++
+          }
+
+          if(row.action == 'provision'){
+            provision_count++
+          }
+
+          if(row.action == 'update'){
+            update_count++
+          }
+
+          if(row.action == 'resolve'){
+            resolve_count++
+          }
+        }else{
+          search_obj["x"] = recent_timestamp;
+          search_obj["y"] = search_count;
+          tot_searches.push(search_obj);
+
+          provision_obj["x"] = recent_timestamp;
+          provision_obj["y"] = provision_count;
+          tot_provisions.push(provision_obj);
+
+          update_obj["x"] = recent_timestamp;
+          update_obj["y"] = update_count;
+          tot_updates.push(update_obj);
+
+          resolve_obj["x"] = recent_timestamp;
+          resolve_obj["y"] = resolve_count;
+          tot_resolves.push(resolve_obj);
+          
+          recent_timestamp = timestamp
+          search_count = 0
+          provision_count = 0
+          update_count = 0
+          resolve_count = 0
+        }
+      }
+
+      search_obj["x"] = recent_timestamp;
+      search_obj["y"] = search_count;
+      tot_searches.push(search_obj);
+
+      provision_obj["x"] = recent_timestamp;
+      provision_obj["y"] = provision_count;
+      tot_provisions.push(provision_obj);
+
+      update_obj["x"] = recent_timestamp;
+      update_obj["y"] = update_count;
+      tot_updates.push(update_obj);
+
+      resolve_obj["x"] = recent_timestamp;
+      resolve_obj["y"] = resolve_count;
+      tot_resolves.push(resolve_obj);
+
+      const activity_trends_labels = [
+      ];
+
+      const types_labels = [
+        'Action',
+        'BioChemEntity',
+        'CreativeWork',
+        'Event',
+        'Intangible',
+        'MedicalEntity',
+        'Orgranization',
+        'Person',
+        'Place',
+        'Product',
+      ];
+    
+      const activity_trends_data = {
+        labels: activity_trends_labels,
+        datasets: [
+          {
+            label: 'Searches',
+            data: tot_searches,
+            borderColor: 'rgba(255,99,132,1)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          },
+          {
+            label: 'Provisions',
+            data: tot_provisions,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          },
+          {
+            label: 'Updates',
+            data: tot_updates,
+            borderColor: 'rgba(255, 206, 86, 1)',
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+          },
+          {
+            label: 'Resolves',
+            data: tot_resolves,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          }
+        ]
+      };
+
+      
+      if(localStorage.action){
+        total_action = JSON.parse(localStorage.getItem('action')).length;
+      }else{
+        total_action = 0
+      }
+
+      if(localStorage.biochementity){
+        total_biochementity = JSON.parse(localStorage.getItem('biochementity')).length;
+      }else{
+        total_biochementity = 0
+      }
+
+      if(localStorage.creativework){
+        total_creativework = JSON.parse(localStorage.getItem('creativework')).length;
+      }else{
+        total_creativework = 0
+      }
+
+      if(localStorage.event){
+        total_event = JSON.parse(localStorage.getItem('event')).length;
+      }else{
+        total_event = 0
+      }
+
+      if(localStorage.intangible){
+        total_intangible = JSON.parse(localStorage.getItem('intangible')).length;
+      }else{
+        total_intangible = 0
+      }
+
+      if(localStorage.medicalentity){
+        total_medicalentity = JSON.parse(localStorage.getItem('medicalentity')).length;
+      }else{
+        total_medicalentity = 0
+      }
+
+      if(localStorage.organization){
+        total_organization = JSON.parse(localStorage.getItem('organization')).length;
+      }else{
+        total_organization = 0
+      }
+
+      if(localStorage.person){
+        total_person = JSON.parse(localStorage.getItem('person')).length;
+      }else{
+        total_person = 0
+      }
+
+      if(localStorage.place){
+        total_place = JSON.parse(localStorage.getItem('place')).length;
+      }else{
+        total_place = 0
+      }
+
+      if(localStorage.product ){
+        total_product = JSON.parse(localStorage.getItem('product')).length;
+      }else{
+        total_product = 0
+      }
+
+      const types_data = {
+        labels: types_labels,
+        datasets: [{
+          label: '',
+          data: [total_action,total_biochementity,total_creativework,total_event,total_intangible,total_medicalentity,total_organization,total_person,total_place,total_product],
+          backgroundColor: [
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          'rgba(97, 104, 237, .2)',
+          
+      ],
+      borderColor: [
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)',
+        'rgba(97, 104, 237, 1)'
+      ],
+      borderWidth: 1,
+      fill: false
+        }],
+      };
+    
+      const activity_trends_config = {
+        type: 'line',
+        data: activity_trends_data,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            }
+          }
+        },
+      };
+
+      const types_config = {
+        type: 'bar',
+        data: types_data,
+        options: {
+          plugins: {
+            legend: {
+              display: false
+            }
+          }
+        }
+      };
+    </script>
+    <script>
+      const activity_trends = new Chart(
+        document.getElementById('activity_trends'),
+        activity_trends_config
+      );
+
+      const types_chart = new Chart(
+        document.getElementById('types_chart'),
+        types_config
+      );
+
+      refreshButton = document.getElementById('refreshButton');
+      refreshButton.addEventListener("click", function() {
+        $('#refreshButton').hide();
+        document.getElementById("refreshloading").style.display = "block";
+        $('.table_button').hide();
+      });
+    </script>
+  </body>
+</html>
+

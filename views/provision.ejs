@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Girraph</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="vendor/aos/aos.css" rel="stylesheet" />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.scss" type="text/css" />
+    <link rel="stylesheet" href="js/main.js" type="text/css" />
+
+    <!-- =======================================================
+  * Template Name: OnePage - v4.7.0
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script>
+
+      function get_account(){
+        getAccount();
+      }
+       
+  </script>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center justify-content-between">
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+        <!--<h1 class="logo"><a href="img/Logo.jpg">Public DKG Beta</a></h1>-->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="/search" class="logo" style="color: #6168ed"></a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li id="MM">
+              
+            </li>
+          </ul>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <html>
+  <head>
+ 
+  </head>
+  <body><div class="area"></div><nav class="main-menu">
+    <ul>
+      <li>
+          <a href="/search">
+              <i class="fa fa-home fa-2x"></i>
+              <p class="nav-text" style="padding-bottom:50px;padding-top:10px;">
+                  GIRRAPH
+              </p>
+          </a>
+        
+      </li>
+        <li>
+            <a href="/dashboard">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text" style="padding-bottom:10px;padding-top:10px;">
+                    Dashboard
+                </span>
+            </a>
+          
+        </li>
+        <li class="has-subnav">
+            <a href="/provision">
+                <i class="fa fa-laptop fa-2x"></i>
+                <span class="nav-text" style="padding-bottom:10px;">
+                    Provision
+                </span>
+            </a>
+            
+        </li>
+        <li class="has-subnav">
+            <a href="/update">
+               <i class="fa fa-list fa-2x"></i>
+                <span class="nav-text" style="padding-bottom:10px;">
+                    Update
+                </span>
+            </a>
+            
+        </li>
+        <li class="has-subnav">
+            <a href="/resolve">
+               <i class="fa fa-folder-open fa-2x"></i>
+                <span class="nav-text" style="padding-bottom:10px;">
+                    Resolve
+                </span>
+            </a>
+           
+        </li>
+       
+        <li class="has-subnav">
+            <a onclick="logout()">
+              <i class="fa fa-folder-open fa-2x"></i>
+              <span class="nav-text" style="padding-bottom:10px;">
+                  Logout
+              </span>
+            </a>
+        </li>
+    </ul>
+</nav>
+</body>
+    </html>
+    <!-- End Header -->
+    <main id="main">
+      <% if(locals.data) { %>
+        <% if(locals.data.status == 'FAILED') { %>
+          <section id="faq" class="faq section-bg" style="padding-top:130px;">
+            <div class="container" >
+              <div class="section-title">
+                <h2 style="color:#6168ED">Provision <%= data.status %></h2>
+                <p>on <%= data.data.blockchain.name %></p>
+              </div>
+              <div class="php-email-form"><button type="submit"><a href="/provision" style="color:white;">Try Again</a></button></div>
+            </div>
+          </section>
+        <% } %>
+        <% if(locals.data.status == 'COMPLETED') { %>
+          <section id="faq" class="faq section-bg" style="padding-top:130px;">
+            <div class="container" >
+              <div class="section-title">
+                <h2 style="color:#6168ED">Provision <%= data.status %></h2>
+                <p> to <%= data.data.blockchain.name %></P>
+              </div>
+              <div class="faq-list">
+                <ul>
+                  <li data-aos="fade-up" style="padding-left:5px;border: 1px solid #6168ED;">
+                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1" style ="word-wrap: break-word;color:#6168ED;">
+                      <%= data.status %> | <%= data.data.blockchain.transactionHash %>
+                      <i class="bx bx-chevron-down icon-show" style="color:#13B785" ></i><i class="bx bx-chevron-up icon-close" style="color:#13B785"></i></a>
+                    <div id="faq-list-1" class="collapse" data-bs-parent=".faq-list">
+                      <section id="contact" class="contact" style="padding:0px 0px;">
+                        <div class="container" >
+                          <div class="section-title">
+                            <form  class="resolve" id="resolve_form" action="/resolve" method="POST">
+                              <input type="text" name="resolve_ids" id="idz" style="display:none;" value=""></input>
+                              <input type="text" name="account" id="account" style="display:none;" value=""></input>
+                              <div class="php-email-form"><button type="submit" style="float: right;padding:3px 10px;background-color:#6168ED;" onclick="resolvewait()" class ="resolve_button" id="resolve_button">Resolve</button></div>
+                              <script>
+                                document.getElementById("idz").setAttribute("value", <%- JSON.stringify(data.data.id) %>);
+                                document.getElementById("account").setAttribute("value", localStorage.account);
+                              </script>
+                            </form>
+                          </div>
+                        </div>
+                      </section>
+                      <p style="padding-left:20px;">Published: <%= data.data.metadata.timestamp %></P>
+                      <ul>
+                        <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                          Metadata:
+                          <ul style="border-left: 5px solid #C446A7;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Type: <%= data.data.metadata.type %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Visibility: <%= data.data.metadata.visibility %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Data hash: <%= data.data.metadata.dataHash %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Issuer: <%= data.data.metadata.issuer %></li>
+                          </ul>
+                        </li>
+                        <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                          UALs:
+                          <ul style="border-left: 5px solid #CE572A;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                            <% for(i=0; i < data.data.metadata.UALs.length; i++) { %>
+                              <% a = Object.entries(data.data.metadata.UALs)[i] %>
+                              <% a = Object.entries(data.data.metadata.UALs)[i] %>
+                              <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">
+                                <section id="contact" class="contact" style="padding:0px 0px;">
+                                  <div class="container" >
+                                    <div class="section-title">
+                                      <form  class="update" id="update_form" action="/update_ual" method="POST">
+                                        <input type="text" name="ual" id="aidz" style="display:none;" value=""></input>
+                                        <input type="text" name="type" id="tidz" style="display:none;" value=""></input>
+                                        <div class="php-email-form"><button type="submit" style="float: right;padding:3px 10px;background-color:#6168ED;" onclick="updatewait()" class ="update_button" id="update_button">Update</button></div>
+                                        <script>
+                                          index = <%= i+1 %>
+                                          document.getElementById("aidz").setAttribute("id","aid"+index);
+                                          document.getElementById("aid"+index).setAttribute("value", <%- JSON.stringify(a[1]) %>);
+                                          document.getElementById("tidz").setAttribute("id","tid"+index);
+                                          document.getElementById("tid"+index).setAttribute("value", <%- JSON.stringify(data.data.metadata.type) %>);
+                                        </script>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </section>
+                                 <%= a[1] %></li>
+                            <% } %>
+                          </ul>
+                        </li>
+                        <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                          Keywords:
+                          <ul style="border-left: 5px solid #CE572A;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                            <% for(i=0; i < data.data.metadata.keywords.length; i++) { %>
+                              <% a = Object.entries(data.data.metadata.keywords)[i] %>
+                              <% a = Object.entries(data.data.metadata.keywords)[i] %>
+                              <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;"> <%= a[1] %></li>
+                            <% } %>
+                          </ul>
+                        </li>
+                        <li style="padding-top:5px;padding-bottom:0px;word-wrap: break-word;">
+                          Data:
+                          <ul style="border-left: 5px solid #4655C4;background-color: #f1f1f1;list-style-type: none;padding: 10px 20px;">
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Data id: <%= data.data.id %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Metadata hash: <%= data.data.metadataHash %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:0px;background:none;word-wrap: break-word;">Root hash: <%= data.data.rootHash %></li>
+                            <li style="padding-top:0px;padding-left:5px;padding-bottom:5px;background:none;word-wrap: break-word;">Signature: <%= data.data.signature %></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <section id="contact" class="contact" style="padding:10px 0px;">
+                <div class="container" >
+                  <div class="section-title">
+                    <div class="php-email-form"><button type="submit" style="background-color:#6168ED"><a href="/provision" style="color:white;background-color:none;">Provision Again</a></button></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        <% } %>
+      <% }else{ %>
+        <!-- ======= Publish Section ======= -->
+        <section id="contact" class="contact" style="padding-top:130px;">
+      <div class="container" data-aos="fade-up">
+  
+        <div class="section-title">
+          <h2 style="color:#6168ED">Provision</h2>
+          <p></p>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-4">
+            <label for="standard-select" style="color:#6168ED;font-size:1.5rem;margin-left:25%">Type</label>
+            <div class="select" style="margin-left:25%">
+              <select id="standard-select" onchange="build_options()" single>
+                <option onclick="build_options()" id="Action">Action</option>
+                <option id="BioChemEntity">BiochemEntity</option>
+                <option id="CreativeWork">CreativeWork</option>
+                <option id="Event">Event</option>
+                <option id="Intangible">Intangible</option>
+                <option id="MedicalEntity">Medical Entity</option>
+                <option id="Organization">Organization</option>
+                <option id="Person">Person</option>
+                <option id="Place">Place</option>
+                <option id="Product">Product</option>
+              </select>
+              <span class="single_focus"></span>
+            </div>
+  
+            <!-- type-->
+            <label for="multi-select" style="color:#6168ED;font-size:1.5rem;margin-left:25%">Properties</label>
+            <div class="select select--multiple" style="margin-left:25%">
+              <select id="multi-select" multiple>
+  
+              </select>
+              <span class="multi_focus"></span>
+            </div>
+          </div>
+  
+          <div class="col-lg-8 mt-5 mt-lg-0">
+            <form class="provision_form" id="provision_form" action="/provision" method="POST" style="margin-left:10%;">
+              <div id="form_elements"></div>
+  
+                <input type="text" name="keywords" class="form-control" id="keywords" rows="5" placeholder="Comma delimited list of keywords..." style="margin-left:17.25%;width:65.5%;margin-bottom:5px;padding:3px 10px;border:1px solid #6168ED" required></input>
+                <input type="text" name="type" class="form-control" id="type" rows="5" style="display: none;" required ></input>
+                <input type="text" name="account" id="account" style="display:none;" value=""></input>
+                <div class="php-email-form" style="padding-top:20px;"><button type="submit" id="provision_button" class="provision_button" onclick="pleasewait_provision()" style="background-color:#6168ED;margin-left:42%;">Provision</button></div>
+              </form>
+              <div id="pw_provision" type="text" style="margin-left:25%;display:none;">Please wait... Provisioning to the DKG. This may take a few minutes.</div>
+              <% if(locals.blocked) { %>
+                <div type="text" style="margin-left:30%;width:50%;">You can only submit 1 provision request per 30 seconds.</div>
+              <% } %>
+            </div>
+          </div>
+  
+        </div>
+        <form id="login_form">
+          <input type="text" name="account" id="account" style="display:none;" value=""></input>
+        </form>
+      </section><!-- End Contact Section -->
+      <% } %>
+  
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" style="position: fixed; bottom: 0; width: 100%">
+      <div class="container d-md-flex py-4">
+        
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Vendor JS Files -->
+    <script src="vendor/purecounter/purecounter.js"></script>
+    <script src="vendor/aos/aos.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+    <script src="js/main.js"></script>
+    <script>let account = localStorage.getItem('account');
+      if(account){
+        account = account.substring(0,10);
+        element = `<p style="font-size:18px;color:#13B785;"><i class="ri-check-double-line" style="color:#13B785;padding-right:3px;"></i>${account}...</p>`
+        $('#MM').append(element);
+      }else{
+        element = `<button class="connectWalletButton" id="connectWalletButton" onclick="get_account()">Connect Wallet</button>`
+        $('#MM').append(element);
+      }</script>
+    <script src="js/form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        function pleasewait_provision() {
+            var x = document.getElementById("pw_provision");
+            var y = document.getElementById("provision_button");
+            if(x.style.display === "none" && document.getElementById("keywords").value.length != 0 && document.getElementById("type").value.length != 0){
+              x.style.display = "block";
+              y.style.display = "none";
+            }else{
+              x.style.display = "none";
+            }
+        }
+  
+        function resolvewait() {
+        var x = document.getElementById("resolve_button");
+        x.style.display = "none";
+      }
+      function updatewait() {
+        var x = document.getElementById("update_button");
+        x.style.display = "none";
+      }
+  
+      type = document.getElementById("Action")
+      type.click();
+
+      function get_account(){
+        getAccount();
+      }
+
+      function logout(){
+        localStorage.removeItem('account');
+        document.getElementById("MM").innerHTML = "";
+        element = `<button class="connectWalletButton" id="connectWalletButton" onclick="get_account()">Connect Wallet</button>`
+        $('#MM').append(element);
+      }
+
+      if(localStorage.account){
+        document.getElementById("account").value = localStorage.account;
+      }
+    </script>
+  </body>
+</html>
+

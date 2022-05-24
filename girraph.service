@@ -1,0 +1,11 @@
+[Unit]
+Description=girraph
+
+[Service]
+Type=simple
+WorkingDirectory=/root/girraph
+ExecStart=/root/girraph/girraph-app.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
